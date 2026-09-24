@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3eee3">
+<title>Early Rose Homestead | Fresh Microgreens</title>
+<meta name="description" content="Fresh, thoughtfully grown microgreens from Early Rose Homestead. Product information, ordering, FAQs, contact information and seasonal offerings.">
+<style>
+:root{
+  --cream:#f3eee3; --paper:#fbf8f1; --ink:#262a25; --sage:#596b5c;
+  --sage2:#dfe5dc; --rose:#a86f72; --line:#b9b09f; --muted:#6f716b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+.wrap{width:min(760px,100%);margin:auto;background:var(--paper);min-height:100vh;box-shadow:0 0 45px rgba(34,39,34,.08)}
+header{padding:46px 24px 30px;text-align:center;border-bottom:1px solid var(--line)}
+.eyebrow{font:700 11px/1.2 Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--sage)}
+.mark{width:128px;height:82px;margin:15px auto 20px;display:grid;place-items:center;color:var(--ink)}
+.brand-art{width:128px;height:78px;overflow:visible}
+.brand-art *{vector-effect:non-scaling-stroke}
+h1{font-size:clamp(34px,8vw,52px);line-height:1;margin:0 0 12px;font-weight:500}
+.tag{font-size:17px;font-style:italic;margin:0 0 12px}
+.intro{max-width:560px;margin:0 auto;color:var(--muted);font-size:15px}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:18px 18px 4px}
+.btn{min-height:54px;display:flex;align-items:center;justify-content:center;text-align:center;padding:11px;border:1px solid var(--sage);border-radius:4px;text-decoration:none;color:var(--paper);background:var(--sage);font:700 12px/1.2 Arial,sans-serif;letter-spacing:.04em}
+.btn.alt{background:transparent;color:var(--sage)}
+main{padding:8px 20px 42px}
+section{padding:34px 5px;border-bottom:1px solid #d8d0c2}
+section:last-child{border-bottom:0}
+.kicker{font:700 10px/1 Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-bottom:8px}
+h2{font-size:28px;font-weight:500;margin:0 0 13px;letter-spacing:-.015em}
+.ornament{display:flex;align-items:center;justify-content:center;gap:9px;margin:3px auto 18px;color:var(--sage);opacity:.9}
+.ornament:before,.ornament:after{content:"";height:1px;width:48px;background:var(--line)}
+.ornament svg{width:30px;height:16px}
+.section-head{display:flex;align-items:center;gap:11px;margin-bottom:7px}
+.section-icon{width:31px;height:31px;flex:0 0 31px;color:var(--sage)}
+.section-head h2{margin:0}
+h3{font-size:18px;margin:22px 0 5px;font-weight:500}
+p{margin:8px 0}
+.note{background:var(--sage2);border-left:3px solid var(--sage);padding:15px 16px;margin-top:16px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.shop-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.product{border:1px solid var(--line);background:#fffdf8;padding:17px;border-radius:4px;position:relative}
+.product-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.product h3{margin:0 0 5px;font-size:20px}
+.status{font:700 9px/1 Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--sage);color:var(--sage);padding:6px 7px;border-radius:20px;white-space:nowrap}
+.status.available{background:var(--sage);color:var(--paper)}
+.status.soon{border-color:var(--rose);color:var(--rose)}
+.status.unavailable{border-color:var(--line);color:var(--muted)}
+.price-line{font-size:15px;margin:7px 0 3px}
+.price-line strong{font-size:17px;font-weight:500}
+.product-note{font:12px/1.5 Arial,sans-serif;color:var(--muted);margin:4px 0 13px}
+
+.product-meta{font:12px/1.5 Arial,sans-serif;color:var(--muted);margin:7px 0 13px}
+.order-mini{display:block;text-align:center;text-decoration:none;border-top:1px solid #ddd4c5;padding-top:11px;color:var(--sage);font:700 11px/1.3 Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase}
+.availability-note{font:12px/1.5 Arial,sans-serif;color:var(--muted);margin-top:13px;text-align:center}
+@media(max-width:540px){.shop-grid{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);padding:17px;border-radius:4px;background:#fffdf8}
+.card h3{margin:0 0 6px}
+.small{font:13px/1.5 Arial,sans-serif;color:var(--muted)}
+.steps{counter-reset:step;margin-top:18px}
+.step{position:relative;padding:0 0 18px 46px}
+.step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;border:1px solid var(--sage);border-radius:50%;display:grid;place-items:center;color:var(--sage);font:700 12px Arial}
+details{border-top:1px solid #d8d0c2;padding:15px 0}
+details:last-child{border-bottom:1px solid #d8d0c2}
+summary{cursor:pointer;font-weight:700;padding-right:20px}
+details p{color:var(--muted);font-family:Arial,sans-serif;font-size:14px}
+.contact a{color:var(--sage);text-decoration-thickness:1px;text-underline-offset:3px}
+.promo{border:1px solid var(--sage);padding:24px 22px;text-align:center;background:linear-gradient(180deg,#f8f6ee,#eef1e9);position:relative}
+.promo:before,.promo:after{content:"✦";position:absolute;top:8px;color:var(--rose);font-size:10px}
+.promo:before{left:10px}.promo:after{right:10px}
+.harvest-divider{display:flex;align-items:center;gap:10px;margin:25px 0 0;color:var(--muted)}
+.harvest-divider:before,.harvest-divider:after{content:"";height:1px;background:#d8d0c2;flex:1}
+.harvest-divider svg{width:42px;height:23px}
+footer{text-align:center;padding:32px 22px 42px;background:#e7e1d5}
+footer strong{font-size:18px;font-weight:500}
+footer p{font:12px/1.6 Arial,sans-serif;color:var(--muted)}
+@media(max-width:540px){
+ .actions{grid-template-columns:1fr}
+ .cards{grid-template-columns:1fr}
+ header{padding-top:36px}
+ main{padding-left:16px;padding-right:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Grown with Purpose</div>
+  <div class="mark" aria-label="Early Rose Homestead wheelbarrow mark">
+    <svg class="brand-art" viewBox="0 0 180 105" role="img" aria-label="Vintage wheelbarrow with microgreens">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M41 54h77l-10 25H51z"/>
+        <path d="M118 58l31-14M108 79l31 8"/>
+        <circle cx="44" cy="84" r="10"/><circle cx="44" cy="84" r="3"/>
+        <path d="M54 79L44 84"/>
+        <path d="M58 53c-2-13 6-19 8-29M69 53c1-18 11-24 14-35M82 53c-1-15 7-22 9-31M95 53c2-15 10-18 13-28"/>
+        <path d="M64 37c-7-1-10-6-11-11 7 0 11 4 11 11zM80 31c-6-2-8-7-7-12 6 2 9 6 7 12zM91 36c7-1 11-5 12-10-7 0-11 4-12 10zM106 38c6-1 10-5 11-10-6 0-10 4-11 10z"/>
+        <path d="M57 48c8-3 14-2 20 5M77 49c8-4 16-3 23 4M96 48c6-3 12-2 17 4"/>
+      </g>
+      <text x="82" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="15" letter-spacing="3" fill="currentColor">ERH</text>
+    </svg>
+  </div>
+  <div class="ornament" aria-hidden="true">
+    <svg viewBox="0 0 36 18"><path d="M2 15c10-1 13-8 17-13M11 11c-5 0-7-3-8-6 5 0 8 2 8 6M17 6c5 0 8-2 10-5-5-1-8 1-10 5M19 13c6 0 10-3 13-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+  </div>
+  <h1>Early Rose<br>Homestead</h1>
+  <p class="tag">Simple things. Done exceptionally well.</p>
+  <p class="intro">Fresh, thoughtfully grown microgreens from our homestead to your table. Find product information, ordering details, answers to common questions, and what is growing at Early Rose.</p>
+  <div class="harvest-divider" aria-hidden="true">
+    <svg viewBox="0 0 50 26"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M25 23V4M25 12c-6 0-10-3-12-8 6 0 10 3 12 8M25 17c6 0 10-3 12-8-6 0-10 3-12 8"/></g></svg>
+  </div>
+</header>
+
+<nav class="actions" aria-label="Quick contact">
+  <a class="btn" href="sms:+16163304786">Call / Text</a>
+  <a class="btn alt" href="mailto:earlyrosehomestead@gmail.com?subject=Early%20Rose%20Homestead%20Inquiry">Email ERH</a>
+  <a class="btn alt" href="https://www.facebook.com/profile.php?id=61594350093254" target="_blank" rel="noopener">Facebook</a>
+</nav>
+
+<main>
+<section>
+  <div class="kicker">This Week</div>
+  <div class="section-head"><svg class="section-icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M16 27V8M16 15c-6 0-9-3-10-8 6 0 9 3 10 8M16 20c6 0 9-3 10-8-6 0-9 3-10 8"/><path d="M10 27h12"/></g></svg><h2>Current Availability</h2></div>
+  <p>Our harvest changes as crops grow. Browse the varieties below, then tap <strong>Ask About This</strong> to start a text with the product name already filled in.</p>
+  <div id="shopGrid" class="shop-grid" aria-label="Microgreen availability"></div>
+  <noscript><div class="note">Please call or text <strong>616-330-4786</strong> for current microgreen availability.</div></noscript>
+  <p class="availability-note">Availability, package sizes, pricing, and fulfillment are confirmed directly by Early Rose Homestead before an order is finalized.</p>
+  <div class="note"><strong>Looking for something specific?</strong><br>Ask about individual varieties, blends, upcoming harvests, and subscription options.</div>
+</section>
+
+<section>
+  <div class="kicker">From Seed to Table</div>
+  <div class="section-head"><svg class="section-icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 23h20l-2 5H8z"/><path d="M11 23V11M16 23V7M21 23V12"/><path d="M11 15c-4 0-6-2-7-5 4 0 6 2 7 5M16 12c4 0 6-2 7-5-4 0-6 2-7 5M21 16c4 0 6-2 7-5-4 0-6 2-7 5"/></g></svg><h2>Our Microgreens</h2></div>
+  <p>Microgreens are young edible greens harvested shortly after their first leaves develop. They bring fresh flavor, color, texture, and an easy way to add greens to everyday meals.</p>
+  <div class="cards">
+    <div class="card"><div class="kicker" style="margin-bottom:5px">Fresh Harvest</div><h3>Broccoli</h3><p class="small">Mild, fresh and versatile. An easy addition to sandwiches, eggs, salads, bowls and avocado toast.</p></div>
+    <div class="card"><div class="kicker" style="margin-bottom:5px">Fresh Harvest</div><h3>Arugula</h3><p class="small">Distinctive and peppery. Excellent when you want a little more bite.</p></div>
+    <div class="card"><div class="kicker" style="margin-bottom:5px">Fresh Harvest</div><h3>Radish</h3><p class="small">Crisp with a lively radish-style kick. Great for tacos, salads, sandwiches and savory dishes.</p></div>
+    <div class="card"><div class="kicker" style="margin-bottom:5px">Fresh Harvest</div><h3>Seasonal &amp; Blends</h3><p class="small">Additional varieties and thoughtfully selected blends rotate with our growing schedule.</p></div>
+  </div>
+  <h3>Care at Home</h3>
+  <p>Keep microgreens refrigerated and dry. For best quality, wash only what you plan to eat, using clean cool running water, then gently dry before serving. Follow the Best By information on your package.</p>
+</section>
+
+<section>
+  <div class="kicker">Fresh &amp; Simple</div>
+  <div class="section-head"><svg class="section-icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 8h18v19H7zM11 5h10v6H11z"/><path d="M11 16h10M11 21h7"/></g></svg><h2>How to Order</h2></div>
+  <div class="steps">
+    <div class="step"><strong>Ask what is growing.</strong><br><span class="small">Call/text, email, or message us on Facebook. Tell us what you are interested in and approximately how much you need.</span></div>
+    <div class="step"><strong>We will confirm availability.</strong><br><span class="small">Because we grow fresh, availability can change from harvest to harvest. We will confirm varieties, quantity, price, and fulfillment details with you.</span></div>
+    <div class="step"><strong>Enjoy your harvest.</strong><br><span class="small">We will arrange the available delivery, pickup, or shipping option that applies to your order.</span></div>
+  </div>
+  <a class="btn" style="margin-top:8px" href="sms:+16163304786?body=Hi%20Early%20Rose%20Homestead!%20I%27d%20like%20to%20place%20an%20order.%20What%20microgreens%20are%20currently%20available%3F">Ask About an Order</a>
+</section>
+
+<section>
+  <div class="kicker">Good to Know</div>
+  <div class="section-head"><svg class="section-icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="12"/><path d="M12.5 12c.5-3 6.5-3.5 7.2.2.7 3.4-3.7 3.5-3.7 6.5M16 23h.01"/></g></svg><h2>Frequently Asked Questions</h2></div>
+  <details><summary>How should I store my microgreens?</summary><p>Keep them refrigerated and as dry as possible in their original food-safe container. Avoid leaving the container open or allowing excess moisture to collect inside.</p></details>
+  <details><summary>Should I wash microgreens before eating them?</summary><p>Yes. Wash the amount you plan to use under clean, cool running water and gently dry before serving.</p></details>
+  <details><summary>How long will they keep?</summary><p>Freshness varies by variety and storage conditions. Use the Best By information on your package as your guide and discard greens that show signs of spoilage.</p></details>
+  <details><summary>Where are Early Rose microgreens grown?</summary><p>Our microgreens are grown by Early Rose Homestead in Michigan with an emphasis on freshness, careful handling, and small-batch growing.</p></details>
+  <details><summary>Do you offer subscriptions?</summary><p>Subscription options may be available. Contact us and we can discuss current varieties, frequency, and fulfillment options.</p></details>
+  <details><summary>Do you deliver or ship?</summary><p>Fulfillment options depend on your location and current availability. Contact us with your location and what you would like to order, and we will confirm the options available for that order.</p></details>
+  <details><summary>Can I request a specific variety?</summary><p>Absolutely. Tell us what you are looking for. If it is not currently ready, we can let you know whether it is part of an upcoming grow.</p></details>
+</section>
+
+<section>
+  <div class="kicker">From the Homestead</div>
+  <div class="section-head"><svg class="section-icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 27V9M16 15c-6 0-9-3-10-8 6 0 9 3 10 8M16 19c6 0 9-3 10-8-6 0-9 3-10 8"/><path d="M9 27h14"/></g></svg><h2>Why Early Rose?</h2></div>
+  <p>Early Rose began with a simple idea: grow nutritious food, know where it comes from, and build something meaningful from the ground up.</p>
+  <p>What started as a desire to grow more of our own food has grown into a small homestead business centered on fresh, thoughtfully grown microgreens and the belief that the simple things are often worth doing exceptionally well.</p>
+</section>
+
+<section>
+  <div class="kicker">What's Growing Next</div>
+  <div class="section-head"><svg class="section-icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 13h18v14H7zM5 9h22v5H5zM16 9v18M10 9c-3-1-3-6 .5-6 3 0 5.5 6 5.5 6M22 9c3-1 3-6-.5-6-3 0-5.5 6-5.5 6"/></g></svg><h2>Seasonal Offers &amp; Promotions</h2></div>
+  <div id="promotionBox" class="promo" aria-live="polite"></div>
+</section>
+
+<section class="contact">
+  <div class="kicker">Say Hello</div>
+  <div class="section-head"><svg class="section-icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h20v16H6zM7 9l9 8 9-8"/></g></svg><h2>Contact Early Rose</h2></div>
+  <p><strong>Call or Text</strong><br><a href="tel:+16163304786">616-330-4786</a></p>
+  <p><strong>Email</strong><br><a href="mailto:earlyrosehomestead@gmail.com">earlyrosehomestead@gmail.com</a></p>
+  <p><strong>Facebook</strong><br><a href="https://www.facebook.com/profile.php?id=61594350093254" target="_blank" rel="noopener">Visit Early Rose Homestead on Facebook</a></p>
+</section>
+</main>
+
+<footer>
+  <strong>Early Rose Homestead</strong>
+  <p>Michigan grown · Grown with purpose.<br>Harvested fresh. Shared with care.</p>
+  <p>© <span id="year"></span> Early Rose Homestead</p>
+</footer>
+</div>
+<script>
+/*
+  EARLY ROSE HOMESTEAD — CUSTOMER PAGE DATA
+  ------------------------------------------------
+  For now, this is the one place to update products/promotions.
+  Later, ERHOS can supply this same data automatically.
+
+  status options: "available", "soon", "ask", "unavailable"
+  Leave size/price blank until you want them displayed publicly.
+*/
+const ERH_DATA = {
+  products: [
+    {
+      name: "Broccoli",
+      descriptor: "Mild & Versatile",
+      description: "Fresh broccoli microgreens",
+      size: "",
+      price: "",
+      status: "ask",
+      statusLabel: "Ask Availability"
+    },
+    {
+      name: "Arugula",
+      descriptor: "Peppery",
+      description: "Fresh arugula microgreens",
+      size: "",
+      price: "",
+      status: "ask",
+      statusLabel: "Ask Availability"
+    },
+    {
+      name: "Radish",
+      descriptor: "Crisp & Lively",
+      description: "Fresh radish microgreens",
+      size: "",
+      price: "",
+      status: "ask",
+      statusLabel: "Ask Availability"
+    },
+    {
+      name: "Blends & Seasonal",
+      descriptor: "Rotating Harvest",
+      description: "Small-batch blends and additional varieties change with our growing schedule.",
+      size: "",
+      price: "",
+      status: "ask",
+      statusLabel: "Ask What's Growing"
+    }
+  ],
+  promotion: {
+    active: false,
+    title: "Something fresh is always growing.",
+    message: "Seasonal offerings, special harvests, market dates, and future Early Rose promotions will appear here."
+  }
+};
+
+const phone = "+16163304786";
+const enc = encodeURIComponent;
+
+function statusClass(status){
+  if(status === "available") return "available";
+  if(status === "soon") return "soon";
+  if(status === "unavailable") return "unavailable";
+  return "";
+}
+
+function orderMessage(product){
+  if(product.name === "Blends & Seasonal"){
+    return "Hi Early Rose Homestead! What blends or seasonal microgreens are currently available?";
+  }
+  return `Hi Early Rose Homestead! I'm interested in ${product.name} Microgreens. Are they currently available?`;
+}
+
+function productCard(product){
+  const commercial = [product.size, product.price].filter(Boolean);
+  const commercialLine = commercial.length
+    ? `<p class="price-line">${product.size ? `<span>${product.size}</span>` : ""}${product.size && product.price ? " · " : ""}${product.price ? `<strong>${product.price}</strong>` : ""}</p>`
+    : "";
+  const note = commercial.length
+    ? "Current availability confirmed when ordering."
+    : "Package size & current price confirmed when ordering.";
+  const disabled = product.status === "unavailable";
+  const action = disabled
+    ? `<span class="order-mini" style="color:var(--muted)">Currently Unavailable</span>`
+    : `<a class="order-mini" href="sms:${phone}?body=${enc(orderMessage(product))}">${product.name === "Blends & Seasonal" ? "Ask What's Growing" : "Ask About This"} →</a>`;
+
+  return `<article class="product">
+    <div class="product-top">
+      <div><div class="kicker">${product.descriptor}</div><h3>${product.name}</h3></div>
+      <span class="status ${statusClass(product.status)}">${product.statusLabel}</span>
+    </div>
+    ${commercialLine}
+    <p class="product-meta">${product.description}</p>
+    <p class="product-note">${note}</p>
+    ${action}
+  </article>`;
+}
+
+document.getElementById("shopGrid").innerHTML = ERH_DATA.products.map(productCard).join("");
+
+const promo = ERH_DATA.promotion;
+document.getElementById("promotionBox").innerHTML = promo.active
+  ? `<div class="kicker">Early Rose Special</div><strong>${promo.title}</strong><p class="small">${promo.message}</p>`
+  : `<strong>${promo.title}</strong><p class="small">${promo.message}</p>`;
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
