@@ -14,7 +14,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
-.wrap{width:min(760px,100%);margin:auto;background:var(--paper);min-height:100vh;box-shadow:0 0 45px rgba(34,39,34,.08)}
+.wrap{width:min(1080px,100%);margin:auto;background:var(--paper);min-height:100vh;box-shadow:0 0 45px rgba(34,39,34,.08)}
 header{padding:46px 24px 30px;text-align:center;border-bottom:1px solid var(--line)}
 .eyebrow{font:700 11px/1.2 Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--sage)}
 .mark{width:128px;height:82px;margin:15px auto 20px;display:grid;place-items:center;color:var(--ink)}
@@ -41,7 +41,7 @@ h3{font-size:18px;margin:22px 0 5px;font-weight:500}
 p{margin:8px 0}
 .note{background:var(--sage2);border-left:3px solid var(--sage);padding:15px 16px;margin-top:16px}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
-.shop-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.shop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
 .product{border:1px solid var(--line);background:#fffdf8;padding:17px;border-radius:4px;position:relative}
 .product-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
 .product h3{margin:0 0 5px;font-size:20px}
@@ -56,7 +56,8 @@ p{margin:8px 0}
 .product-meta{font:12px/1.5 Arial,sans-serif;color:var(--muted);margin:7px 0 13px}
 .order-mini{display:block;text-align:center;text-decoration:none;border-top:1px solid #ddd4c5;padding-top:11px;color:var(--sage);font:700 11px/1.3 Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase}
 .availability-note{font:12px/1.5 Arial,sans-serif;color:var(--muted);margin-top:13px;text-align:center}
-@media(max-width:540px){.shop-grid{grid-template-columns:1fr}}
+@media(min-width:900px){.shop-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.cards{grid-template-columns:repeat(4,minmax(0,1fr))}main{padding-left:38px;padding-right:38px}.actions{padding-left:38px;padding-right:38px}}
+@media(max-width:700px){.shop-grid{grid-template-columns:1fr}}
 .card{border:1px solid var(--line);padding:17px;border-radius:4px;background:#fffdf8}
 .card h3{margin:0 0 6px}
 .small{font:13px/1.5 Arial,sans-serif;color:var(--muted)}
@@ -83,6 +84,22 @@ footer p{font:12px/1.6 Arial,sans-serif;color:var(--muted)}
  header{padding-top:36px}
  main{padding-left:16px;padding-right:16px}
 }
+
+.contact-dialog{width:min(560px,calc(100% - 32px));border:1px solid var(--line);border-radius:7px;padding:0;background:var(--paper);color:var(--ink);box-shadow:0 22px 70px rgba(25,30,25,.25)}
+.contact-dialog::backdrop{background:rgba(30,34,30,.48)}
+.dialog-inner{padding:25px}
+.dialog-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px}
+.dialog-top h2{font-size:25px;margin:0}
+.dialog-close{border:0;background:transparent;color:var(--muted);font-size:26px;line-height:1;cursor:pointer;padding:0 3px}
+.message-box{background:#fffdf8;border:1px solid #d8d0c2;padding:14px;margin:15px 0;font:14px/1.55 Arial,sans-serif}
+.dialog-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}
+.dialog-actions .btn{width:100%;cursor:pointer}
+.dialog-note{font:12px/1.5 Arial,sans-serif;color:var(--muted);margin-top:12px}
+.mobile-only{display:none}
+@media(max-width:700px){
+ .dialog-actions{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -115,7 +132,7 @@ footer p{font:12px/1.6 Arial,sans-serif;color:var(--muted)}
 </header>
 
 <nav class="actions" aria-label="Quick contact">
-  <a class="btn" href="sms:+16163304786">Call / Text</a>
+  <a class="btn" href="tel:+16163304786">Call ERH</a>
   <a class="btn alt" href="mailto:earlyrosehomestead@gmail.com?subject=Early%20Rose%20Homestead%20Inquiry">Email ERH</a>
   <a class="btn alt" href="https://www.facebook.com/profile.php?id=61594350093254" target="_blank" rel="noopener">Facebook</a>
 </nav>
@@ -124,7 +141,7 @@ footer p{font:12px/1.6 Arial,sans-serif;color:var(--muted)}
 <section>
   <div class="kicker">This Week</div>
   <div class="section-head"><svg class="section-icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M16 27V8M16 15c-6 0-9-3-10-8 6 0 9 3 10 8M16 20c6 0 9-3 10-8-6 0-9 3-10 8"/><path d="M10 27h12"/></g></svg><h2>Current Availability</h2></div>
-  <p>Our harvest changes as crops grow. Browse the varieties below, then tap <strong>Ask About This</strong> to start a text with the product name already filled in.</p>
+  <p>Our harvest changes as crops grow. Browse the varieties below, then choose <strong>Ask About This</strong> for quick contact options. On a phone, you can start a text with the product name already filled in; on a computer, we will give you easy ways to copy the message, email us, or continue on Facebook.</p>
   <div id="shopGrid" class="shop-grid" aria-label="Microgreen availability"></div>
   <noscript><div class="note">Please call or text <strong>616-330-4786</strong> for current microgreen availability.</div></noscript>
   <p class="availability-note">Availability, package sizes, pricing, and fulfillment are confirmed directly by Early Rose Homestead before an order is finalized.</p>
@@ -153,7 +170,7 @@ footer p{font:12px/1.6 Arial,sans-serif;color:var(--muted)}
     <div class="step"><strong>We will confirm availability.</strong><br><span class="small">Because we grow fresh, availability can change from harvest to harvest. We will confirm varieties, quantity, price, and fulfillment details with you.</span></div>
     <div class="step"><strong>Enjoy your harvest.</strong><br><span class="small">We will arrange the available delivery, pickup, or shipping option that applies to your order.</span></div>
   </div>
-  <a class="btn" style="margin-top:8px" href="sms:+16163304786?body=Hi%20Early%20Rose%20Homestead!%20I%27d%20like%20to%20place%20an%20order.%20What%20microgreens%20are%20currently%20available%3F">Ask About an Order</a>
+  <button class="btn contact-trigger" style="margin-top:8px;width:100%;cursor:pointer" type="button" data-message="Hi Early Rose Homestead! I&#39;d like to place an order. What microgreens are currently available?">Ask About an Order</button>
 </section>
 
 <section>
@@ -190,6 +207,28 @@ footer p{font:12px/1.6 Arial,sans-serif;color:var(--muted)}
 </section>
 </main>
 
+
+<dialog id="contactDialog" class="contact-dialog" aria-labelledby="contactDialogTitle">
+  <div class="dialog-inner">
+    <div class="dialog-top">
+      <div>
+        <div class="kicker">Contact Early Rose</div>
+        <h2 id="contactDialogTitle">How would you like to reach us?</h2>
+      </div>
+      <button class="dialog-close" type="button" aria-label="Close contact options">×</button>
+    </div>
+    <p class="small">Here is your message, ready to use:</p>
+    <div id="contactMessage" class="message-box"></div>
+    <div class="dialog-actions">
+      <button id="copyMessageBtn" class="btn" type="button">Copy Message</button>
+      <a id="textMessageBtn" class="btn alt" href="#">Text ERH</a>
+      <a id="emailMessageBtn" class="btn alt" href="#">Email ERH</a>
+      <a class="btn alt" href="https://www.facebook.com/profile.php?id=61594350093254" target="_blank" rel="noopener">Open Facebook</a>
+    </div>
+    <p class="dialog-note">On a desktop computer, “Copy Message” or email will usually be the easiest options. “Text ERH” is handy on phones and on computers that have an SMS-capable app configured.</p>
+  </div>
+</dialog>
+
 <footer>
   <strong>Early Rose Homestead</strong>
   <p>Michigan grown · Grown with purpose.<br>Harvested fresh. Shared with care.</p>
@@ -198,13 +237,25 @@ footer p{font:12px/1.6 Arial,sans-serif;color:var(--muted)}
 </div>
 <script>
 /*
-  EARLY ROSE HOMESTEAD — CUSTOMER PAGE DATA
-  ------------------------------------------------
-  For now, this is the one place to update products/promotions.
-  Later, ERHOS can supply this same data automatically.
+  ================================================================
+  🌱 EARLY ROSE HOMESTEAD — EDIT HERE
+  ================================================================
+  This section is SOURCE CODE ONLY. Customers do not see an admin
+  panel and cannot use this section to change your website.
+
+  Day-to-day public info:
+    • products / varieties
+    • availability status
+    • package size
+    • public price
+    • promotions
 
   status options: "available", "soon", "ask", "unavailable"
   Leave size/price blank until you want them displayed publicly.
+
+  IMPORTANT: Never put passwords, private customer information,
+  internal costs, or secret API/service keys in this public file.
+  ================================================================
 */
 const ERH_DATA = {
   products: [
@@ -280,7 +331,7 @@ function productCard(product){
   const disabled = product.status === "unavailable";
   const action = disabled
     ? `<span class="order-mini" style="color:var(--muted)">Currently Unavailable</span>`
-    : `<a class="order-mini" href="sms:${phone}?body=${enc(orderMessage(product))}">${product.name === "Blends & Seasonal" ? "Ask What's Growing" : "Ask About This"} →</a>`;
+    : `<button class="order-mini contact-trigger" type="button" data-message="${orderMessage(product).replace(/"/g, "&quot;")}" style="width:100%;background:none;border-left:0;border-right:0;border-bottom:0;cursor:pointer">${product.name === "Blends & Seasonal" ? "Ask What's Growing" : "Ask About This"} →</button>`;
 
   return `<article class="product">
     <div class="product-top">
@@ -295,6 +346,55 @@ function productCard(product){
 }
 
 document.getElementById("shopGrid").innerHTML = ERH_DATA.products.map(productCard).join("");
+
+
+const contactDialog = document.getElementById("contactDialog");
+const contactMessage = document.getElementById("contactMessage");
+const copyMessageBtn = document.getElementById("copyMessageBtn");
+const textMessageBtn = document.getElementById("textMessageBtn");
+const emailMessageBtn = document.getElementById("emailMessageBtn");
+let activeContactMessage = "";
+
+function openContactOptions(message){
+  activeContactMessage = message;
+  contactMessage.textContent = message;
+  textMessageBtn.href = `sms:${phone}?body=${enc(message)}`;
+  emailMessageBtn.href = `mailto:earlyrosehomestead@gmail.com?subject=${enc("Early Rose Homestead Inquiry")}&body=${enc(message)}`;
+  copyMessageBtn.textContent = "Copy Message";
+  if(typeof contactDialog.showModal === "function"){
+    contactDialog.showModal();
+  }else{
+    window.location.href = emailMessageBtn.href;
+  }
+}
+
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest(".contact-trigger");
+  if(trigger){
+    openContactOptions(trigger.dataset.message || "Hi Early Rose Homestead! I'd like to ask about your current microgreens.");
+  }
+});
+
+document.querySelector(".dialog-close").addEventListener("click", () => contactDialog.close());
+contactDialog.addEventListener("click", (event) => {
+  if(event.target === contactDialog) contactDialog.close();
+});
+
+copyMessageBtn.addEventListener("click", async () => {
+  try{
+    await navigator.clipboard.writeText(activeContactMessage);
+    copyMessageBtn.textContent = "Copied ✓";
+  }catch{
+    const area = document.createElement("textarea");
+    area.value = activeContactMessage;
+    document.body.appendChild(area);
+    area.select();
+    document.execCommand("copy");
+    area.remove();
+    copyMessageBtn.textContent = "Copied ✓";
+  }
+});
+
 
 const promo = ERH_DATA.promotion;
 document.getElementById("promotionBox").innerHTML = promo.active
