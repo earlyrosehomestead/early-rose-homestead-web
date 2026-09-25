@@ -43,9 +43,9 @@ p{margin:8px 0}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
 .shop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
 .product{border:1px solid var(--line);background:#fffdf8;padding:17px;border-radius:4px;position:relative}
-.product-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.product-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .product h3{margin:0 0 5px;font-size:20px}
-.status{font:700 9px/1 Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--sage);color:var(--sage);padding:6px 7px;border-radius:20px;white-space:nowrap}
+.status{font:700 9px/1.2 Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--sage);color:var(--sage);padding:6px 7px;border-radius:20px;white-space:normal;text-align:center;max-width:100%;overflow-wrap:anywhere}
 .status.available{background:var(--sage);color:var(--paper)}
 .status.soon{border-color:var(--rose);color:var(--rose)}
 .status.unavailable{border-color:var(--line);color:var(--muted)}
@@ -56,7 +56,8 @@ p{margin:8px 0}
 .product-meta{font:12px/1.5 Arial,sans-serif;color:var(--muted);margin:7px 0 13px}
 .order-mini{display:block;text-align:center;text-decoration:none;border-top:1px solid #ddd4c5;padding-top:11px;color:var(--sage);font:700 11px/1.3 Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase}
 .availability-note{font:12px/1.5 Arial,sans-serif;color:var(--muted);margin-top:13px;text-align:center}
-@media(min-width:900px){.shop-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.cards{grid-template-columns:repeat(4,minmax(0,1fr))}main{padding-left:38px;padding-right:38px}.actions{padding-left:38px;padding-right:38px}}
+@media(min-width:900px){.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}main{padding-left:38px;padding-right:38px}.actions{padding-left:38px;padding-right:38px}}
+@media(min-width:1180px){.shop-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.cards{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:700px){.shop-grid{grid-template-columns:1fr}}
 .card{border:1px solid var(--line);padding:17px;border-radius:4px;background:#fffdf8}
 .card h3{margin:0 0 6px}
@@ -160,6 +161,22 @@ footer p{font:12px/1.6 Arial,sans-serif;color:var(--muted)}
   </div>
   <h3>Care at Home</h3>
   <p>Keep microgreens refrigerated and dry. For best quality, wash only what you plan to eat, using clean cool running water, then gently dry before serving. Follow the Best By information on your package.</p>
+</section>
+
+<section>
+  <div class="kicker">From Our Greens to Your Table</div>
+  <div class="section-head">
+    <svg class="section-icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 19c2 6 6 9 10 9s8-3 10-9H6z"/><path d="M11 17c0-5 3-8 5-11M16 17c0-6 4-9 7-11M16 11c-4 0-6-2-7-5 4 0 6 2 7 5M21 10c4 0 6-2 7-5-4 0-6 2-7 5"/></g></svg>
+    <h2>Ways to Use Your Microgreens</h2>
+  </div>
+  <p>You do not need a special recipe to enjoy microgreens. Add them at the end of a meal for fresh flavor, texture, and a little something extra.</p>
+  <div class="cards">
+    <div class="card"><div class="kicker" style="margin-bottom:5px">Mild &amp; Easy</div><h3>Broccoli</h3><p class="small">Pile onto avocado toast, eggs, sandwiches and wraps. Toss into salads or grain bowls, or use as a fresh finish for soups after cooking.</p></div>
+    <div class="card"><div class="kicker" style="margin-bottom:5px">Peppery</div><h3>Arugula</h3><p class="small">Finish pizza, pasta and flatbreads; tuck into sandwiches; add to eggs; or pair with tomatoes, cheese and vinaigrette when you want a peppery bite.</p></div>
+    <div class="card"><div class="kicker" style="margin-bottom:5px">Crisp &amp; Lively</div><h3>Radish</h3><p class="small">Excellent on tacos, burgers, rice bowls and sandwiches. Try them with eggs, roasted vegetables or creamy dishes that benefit from a fresh radish-style kick.</p></div>
+    <div class="card"><div class="kicker" style="margin-bottom:5px">Mix It Up</div><h3>Blends &amp; Seasonal</h3><p class="small">Use rotating blends anywhere you would add fresh greens: salads, wraps, bowls, toast, sandwiches and as a simple finishing garnish.</p></div>
+  </div>
+  <div class="note"><strong>A simple rule:</strong><br>For the freshest texture and flavor, add microgreens near the end rather than cooking them for a long time. Wash the amount you plan to use under clean, cool running water and gently dry before serving.</div>
 </section>
 
 <section>
