@@ -43,7 +43,7 @@ p{margin:8px 0}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
 .shop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
 .product{border:1px solid var(--line);background:#fffdf8;padding:17px;border-radius:4px;position:relative}
-.product-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.product-top{display:block}
 .product h3{margin:0 0 5px;font-size:20px}
 .status{font:700 9px/1.2 Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--sage);color:var(--sage);padding:6px 7px;border-radius:20px;white-space:normal;text-align:center;max-width:100%;overflow-wrap:anywhere}
 .status.available{background:var(--sage);color:var(--paper)}
@@ -268,6 +268,8 @@ footer p{font:12px/1.6 Arial,sans-serif;color:var(--muted)}
     • promotions
 
   status options: "available", "soon", "ask", "unavailable"
+  NOTE: status is currently used for behavior (such as "unavailable"),
+  but the little status badge is intentionally hidden to keep the cards cleaner.
   Leave size/price blank until you want them displayed publicly.
 
   IMPORTANT: Never put passwords, private customer information,
@@ -353,7 +355,6 @@ function productCard(product){
   return `<article class="product">
     <div class="product-top">
       <div><div class="kicker">${product.descriptor}</div><h3>${product.name}</h3></div>
-      <span class="status ${statusClass(product.status)}">${product.statusLabel}</span>
     </div>
     ${commercialLine}
     <p class="product-meta">${product.description}</p>
